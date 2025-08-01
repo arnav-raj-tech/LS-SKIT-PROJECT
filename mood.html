@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mood Check</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+      background-color: #f3f7f9;
+      color: #333;
+      text-align: center;
+    }
+    .option {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      max-width: 300px;
+    }
+    .option:hover {
+      background-color: #005fa3;
+    }
+    #result {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+ <h2>How are you feeling today?</h2>
+<div>
+  <button onclick="checkMood('happy')">😊 Happy</button>
+  <button onclick="checkMood('sad')">😢 Sad</button>
+  <button onclick="checkMood('anxious')">😟 Anxious</button>
+  <button onclick="checkMood('angry')">😠 Angry</button>
+  <button onclick="checkMood('tired')">😴 Tired</button>
+</div>
+<div id="output" class="quote"></div>
+<script>
+  function checkMood(mood) {
+    let response = "";
+    let link = "";
+
+    switch ((mood || '').toLowerCase()) {
+      case "happy":
+        response = "That's great to hear! Keep spreading positivity. ✨";
+        link = '<a class="link" href="https://positivepsychology.com/benefits-of-happiness/#:~:text=Happiness%20enhances%20physical%20health%20by%20boosting%20immune%20function,%26%20improve%20productivity%20%26%20creativity%20in%20daily%20life." target="_blank">See benefits of happiness</a>';
+        break;
+      case "sad":
+        response = "It's okay to feel sad. Take some time for yourself and talk to someone you trust. 💙";
+        link = '<a class="link" href="https://www.wikihow.com/Overcome-Sadness" target="_blank">See methods to overcome sadness</a>';
+        break;
+      case "anxious":
+        response = "Breathe deeply. You're not alone in this. Maybe write your thoughts down or go for a walk. 🌿";
+        link = '<a class="link" href="https://www.calmclinic.com/anxiety/stop-anxiety-quickly" target="_blank">How to get rid of anxiety</a>';
+        break;
+      case "angry":
+        response = "Try taking a few deep breaths or doing something calming. Anger is natural, but don’t let it control you.🔥";
+        link = '<a class="link" href="https://www.healthline.com/health/mental-health/how-to-control-anger" target="_blank">How to control anger</a>';
+        break;
+      case "tired":
+        response = "Make sure you get some rest. Your body and mind need it. 😴";
+        link = '<a class="link" href="https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/sleep/art-20048379" target="_blank">Tips for good sleep</a>';
+        break;
+      default:
+        response = "Thanks for checking in. Take care of yourself today. 💚";
+    }
+
+    document.getElementById("output").innerHTML = response + (link ? "<br>" + link : "");
+  }
+</script>
+</body>
+</html>

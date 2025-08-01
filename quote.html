@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Daily Quote</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #fff8e7;
+      color: #333;
+      padding: 50px;
+      text-align: center;
+    }
+    blockquote {
+      font-size: 2rem;
+      font-style: italic;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 100px auto;
+    }
+  </style>
+</head>
+<body>
+  <blockquote id="quote"></blockquote>
+
+  <script>
+    const quotes = [
+      "You are braver than you believe, stronger than you seem, and smarter than you think.",
+      "This too shall pass. Everything is temporary.",
+      "You don’t have to control your thoughts. Just stop letting them control you.",
+      "Courage doesn’t always roar. Sometimes it’s the quiet voice saying, ‘I will try again tomorrow.’",
+      "Believe in yourself. There is something inside you greater than any obstacle.",
+      "Happiness can be found even in the darkest of times if one remembers to turn on the light.",
+      "One small positive thought can change your whole day.",
+      "You're not alone. Be kind — everyone’s fighting something you can’t see."
+    ];
+    document.getElementById("quote").innerText =
+      `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+  </script>
+</body>
+</html>
